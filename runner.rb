@@ -25,5 +25,30 @@ l3.next = ListNode.new(4)
 
 
 def add_two_numbers(l1, l2)
-    
+    # iterate through lists to construct integer numbers
+    # add numbers to find result
+    # create new linked list for solution
+    # return new list node object for resulting linked list solution
+    first_integer = 
+    second_integer = 
 end
+
+def integer_creator(node)
+  return nil if node.val == nil
+  result = ""
+  result.prepend(integer_creator(node.next))
+  return node.val.to_s
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
