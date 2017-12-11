@@ -13,15 +13,15 @@ end
 
 l1 = ListNode.new(2)
 l1.next = ListNode.new(4)
-l1.next = ListNode.new(3)
+l1.next.next = ListNode.new(3)
 
 l2 = ListNode.new(5)
 l2.next = ListNode.new(6)
-l2.next = ListNode.new(4)
+l2.next.next = ListNode.new(4)
 
-l3 = ListNode.new(5)
-l3.next = ListNode.new(6)
-l3.next = ListNode.new(4)
+l3 = ListNode.new(7)
+l3.next = ListNode.new(0)
+l3.next.next = ListNode.new(8)
 
 
 def add_two_numbers(l1, l2)
@@ -33,11 +33,14 @@ def add_two_numbers(l1, l2)
     second_integer = 
 end
 
-def integer_creator(node)
-  return nil if node.val == nil
-  result = ""
-  result.prepend(integer_creator(node.next))
-  return node.val.to_s
+def list_to_integer_converter(list)
+  int_string_creator(list).to_i
+end
+
+def int_string_creator(node)
+  # recursive method to build integers from linked list digits
+  return node.val.to_s if node.next == nil
+  int_string_creator(node.next) + node.val.to_s
 end
 
 
